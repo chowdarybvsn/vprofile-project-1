@@ -1,8 +1,5 @@
 pipeline {
 	agent any
-    tools{
-        maven "Mymaven"
-    }
     environment{
         SNAP_REPO = 'vprofile-snapshot'
         NEXUS_VERSION = "nexus3"
