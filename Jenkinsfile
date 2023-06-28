@@ -3,7 +3,6 @@ pipeline {
     environment{
         SNAP_REPO = 'vprofile-snapshot'
         NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
         NEXUSIP = "10.0.1.23"
         NEXUSPORT= "8081"
         NEXUS_USER = "admin"
