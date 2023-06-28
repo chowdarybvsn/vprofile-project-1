@@ -17,7 +17,23 @@ pipeline {
        stage("Build") {
          steps {
            sh 'mvn -s settings.xml -DskipTests install'
-         }    
+         }
+         post{
+            success{
+                echo "archive artifacts"
+                archiveArtifacts archive: '**/*.war'
+            }
+         } 
+       }
+       stage("Test"){
+          steps{
+             sh "mvn -s settings.xml test"  
+          }
+       } 
+       stage("checkstyle"){
+           steps{
+            sh "mvn -s settings.xml checkstyle:checkstyle"
+           }
        }
     }
 }
